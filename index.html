@@ -23,6 +23,11 @@
     <title>Đặt hàng homestay nhanh chống. Trải nghiệm hạng sang tại Luxstay</title>
   </head>
   <body>
+    <style>
+      .slick-slide img {
+        display: inline-flex;
+      }
+    </style>
     <div class="app">
       <header class="header">
         <div class="grid-header">
@@ -62,55 +67,57 @@
               <li class="header-item"><a href="" class="header-item__link">Đăng ký</a></li>
               <li class="header-item"><a href="" class="header-item__link">Đăng nhập</a></li>
               <li class="header-item">
-                <div class="header-place">
-                  <img src="./asset/image/vn.png" alt="" class="header-place__img" />
-                  <span>VND</span>
-                  <ion-icon class="header-place__icon" name="chevron-down"></ion-icon>
-                  <div class="header-place__dropdown">
-                    <div class="row header-place__wrap">
-                      <div class="col-haft-pd-6">
-                        <ul class="header-place__list">
-                          <li class="header-place__item">
-                            <a href="" class="header-place__item-link">
-                              <img src="./asset/image/vn.png" alt="" class="header-place__item-img" />
-                              <span>Tiếng Việt</span>
-                            </a>
-                            <i class="fas fa-check checked-icon"></i>
-                          </li>
-                          <li class="header-place__item">
-                            <a href="" class="header-place__item-link">
-                              <img src="./asset/image/en.png" alt="" class="header-place__item-img" />
-                              <span>English</span>
-                            </a>
-                          </li>
-                          <li class="header-place__item">
-                            <a href="" class="header-place__item-link">
-                              <img src="./asset/image/kr.png" alt="" class="header-place__item-img" />
-                              <span>Korean</span>
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="col-haft-pd-6">
-                        <ul class="header-place__list">
-                          <li class="header-place__item">
-                            <a href="" class="header-place__item-link">
-                              <span class="header-place__item-unit">VND</span>
-                              <span>Việt Nam Đồng</span>
-                            </a>
-                            <i class="fas fa-check checked-icon"></i>
-                          </li>
-                          <li class="header-place__item">
-                            <a href="" class="header-place__item-link">
-                              <span class="header-place__item-unit">USD</span>
-                              <span>United States Dollar</span>
-                            </a>
-                          </li>
-                        </ul>
+                
+                  <div class="header-place js-down">
+                    <img src="./asset/image/vn.png" alt="" class="header-place__img" />
+                    <span>VND</span>
+                    <ion-icon class="header-place__icon" name="chevron-down"></ion-icon>
+                    <div class="header-place__dropdown js-modal">
+                      <div class="row header-place__wrap js-modal-container">
+                        <div class="col-haft-pd-6 ">
+                          <ul class="header-place__list border-left">
+                            <li class="header-place__item">
+                              <a href="" class="header-place__item-link">
+                                <img src="./asset/image/vn.png" alt="" class="header-place__item-img" />
+                                <span>Tiếng Việt</span>
+                              </a>
+                              <i class="fas fa-check checked-icon"></i>
+                            </li>
+                            <li class="header-place__item">
+                              <a href="" class="header-place__item-link">
+                                <img src="./asset/image/en.png" alt="" class="header-place__item-img" />
+                                <span>English</span>
+                              </a>
+                            </li>
+                            <li class="header-place__item">
+                              <a href="" class="header-place__item-link">
+                                <img src="./asset/image/kr.png" alt="" class="header-place__item-img" />
+                                <span>Korean</span>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="col-haft-pd-6">
+                          <ul class="header-place__list">
+                            <li class="header-place__item">
+                              <a href="" class="header-place__item-link">
+                                <span class="header-place__item-unit">VND</span>
+                                <span>Việt Nam Đồng</span>
+                              </a>
+                              <i class="fas fa-check checked-icon"></i>
+                            </li>
+                            <li class="header-place__item">
+                              <a href="" class="header-place__item-link">
+                                <span class="header-place__item-unit">USD</span>
+                                <span>United States Dollar</span>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
+                
               </li>
             </ul>
           </div>
@@ -285,8 +292,11 @@
           </div>
           <!-- gợi ý -->
           <div class="content-body">
-            <h2 class="content-body__heading">Gợi ý từ Luxstay</h2>
-            <p class="content-text">Những địa điểm thường đến mà Luxstay gợi ý dành cho bạn</p>
+            <div class="content-top">
+              <h2 class="content-body__heading">Gợi ý từ Luxstay</h2>
+              <p class="content-text">Những địa điểm thường đến mà Luxstay gợi ý dành cho bạn</p>
+            </div>
+            
             
             <!-- hình ảnh địa điểm gợi ý -->
             <div class="suggestion-location">
@@ -898,5 +908,66 @@
           }
       });
     </script>
+
+    <!-- Hiển thị dropdown -->
+
+<script>
+  const dropTable = document.querySelector('.js-down')
+  const dropDown = document.querySelector('.js-modal')
+  const dropDownContainer = document.querySelector('.js-modal-container')
+  // Chữa cháy 
+  const dropclose = document.querySelector('.container')
+  const dropclose2 = document.querySelector('.footer')
+  const dropclose3 = document.querySelector('.slider')
+  const dropclose4 = document.querySelector('.header-right')
+ 
+
+  
+  
+  function showDropDown () {
+    dropDown.classList.add('open');
+  }
+
+
+  function hideDropDown () {
+    // alert ("hide")
+    dropDown.classList.remove('open');// Không chạy
+  }
+
+  
+  // dropTable.addEventListener('click', showDropDown)
+  // Click lần 1 mở - click 2 lần đóng
+  dropTable.onclick = event => {
+   if (event.detail === 1) {
+    showDropDown ();
+   } else if (event.detail === 2) {
+    hideDropDown ();
+   }
+};
+
+
+
+
+  //Click ra bên ngoài =>đóng
+  dropclose.addEventListener('click', hideDropDown)
+  dropclose2.addEventListener('click', hideDropDown)
+  dropclose3.addEventListener('click', hideDropDown)
+  dropclose4.addEventListener('click', hideDropDown)
+
+  // // Ngăn cản click vào trong mà vẫn đóng
+  dropclose.addEventListener('click', function (event) {
+      event.stopPropagation()
+  })
+
+  // ESC => đóng
+  document.addEventListener('keydown', function(event) {
+  const key = event.key; 
+  if (key === "Escape") {
+      hideDropDown();
+  }
+});
+
+</script>
+
   </body>
 </html>
