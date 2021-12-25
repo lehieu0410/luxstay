@@ -921,31 +921,15 @@
   const dropclose3 = document.querySelector('.slider')
   const dropclose4 = document.querySelector('.header-right')
  
-
-  
-  
   function showDropDown () {
-    dropDown.classList.add('open');
+    dropDown.classList.toggle('open');
   }
-
 
   function hideDropDown () {
-    // alert ("hide")
-    dropDown.classList.remove('open');// Không chạy
+    dropDown.classList.remove('open');
   }
 
-  
-  // dropTable.addEventListener('click', showDropDown)
-  // Click lần 1 mở - click 2 lần đóng
-  dropTable.onclick = event => {
-   if (event.detail === 1) {
-    showDropDown ();
-   } else if (event.detail === 2) {
-    hideDropDown ();
-   }
-};
-
-
+  dropTable.addEventListener('click', showDropDown)
 
 
   //Click ra bên ngoài =>đóng
@@ -955,7 +939,7 @@
   dropclose4.addEventListener('click', hideDropDown)
 
   // // Ngăn cản click vào trong mà vẫn đóng
-  dropclose.addEventListener('click', function (event) {
+  dropDown.addEventListener('click', function (event) {
       event.stopPropagation()
   })
 
