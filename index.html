@@ -1162,14 +1162,16 @@
     openMenuMobile.addEventListener('click', showMenuMobile);
 
     openMenuMobile.addEventListener('click', startOverlay);
+    closeMobileMenu.addEventListener('click',hideMenuMobile);
     closeMobileMenu.addEventListener('click',closeOverlay);
 
     
     // Click ra ngoài => đóng
     window.onclick = function(event) {
     if (event.target == mobileOV) {
-      mobileOV.style.display = "none";
       hideMenuMobile ();
+      mobileOV.style.display = "none";
+      
     }
   }
 
