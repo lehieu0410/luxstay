@@ -105,6 +105,11 @@
         padding-left: 174px;
     }
 
+    .luxstay-suggest {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
     .luxstay_info {
         width: calc(100% / 3);
     }
@@ -132,7 +137,7 @@
 
     .header__mobile-bars-icon {
         font-size: 2.8rem;
-        padding-right: 20px;
+        padding-right: 28px;
     }
     
     .location__link-img {
@@ -181,6 +186,10 @@
         display: block;
     }
 
+    .grid__col-3 {
+        padding-left: 0;
+        padding-right: 8px;
+    }
     .slick-list {
         height: 300px;
     }
